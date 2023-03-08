@@ -17,16 +17,21 @@ Examples
 def main():
     print(find_it([1,2,2,3,3,3,4,3,3,3,2,2,1]))
 
-# my solution
 def find_it(seq):
-    # count each number (check which numbers to count by using set)
-    seq_set = list(set(seq))
     
-    #count and check 
-    for n in seq_set:
-        count = seq.count(n)
-        if count % 2 == 1:
-            return n
+    new_list = []
+    
+    for n in seq:
+        
+         if n not in new_list:
+            count = seq.count(n)
+
+            if count % 2 == 1:
+                return n
+            else:
+                new_list.append(n)
 
 if __name__ == "__main__":
     main()   
+
+
