@@ -31,9 +31,9 @@ def main():
 
 def solution(A):
 
-    #create a range of integers and +1 for the missing integer (+2 as range function returns 1 less than stop param)
+    #create a range of integers from 1 to the lengnth of the array A (+2 for the missing int and as range function returns 1 less than stop param)
     expected_sum = range(1, len(A) + 2)
-    #sum of the expected range of integers - sum of elements = missing element/integer
+    #(sum of the expected range of integers) - (sum of elements in array A) = missing element/integer
     return sum(expected_sum) - sum(A)
 
 if __name__ == "__main__":
