@@ -42,24 +42,24 @@ Write an efficient algorithm for the following assumptions:
 N and X are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..X].
 '''
+
 def main():
 
     print(solution(5, [1, 3, 1, 4, 2, 3, 5]))
 
 def solution(X, A):    
-        
-    # create a list to check positions from 1 to X against
-    B = []
-    # create a list to store indexes of each position
+    # create a set to check positions from 1 to X against
+    B = set()
+    # create a variable to store the number of unique positions covered by a leaf
     count = 0
 
     # iterate through input list A, storing indexes in k and values/positions in i
     for k, i in enumerate(A):
-        # if position is unique add it to B list and count the number of entries
+        # if position is unique add it to B set and increment count
         if i not in B:
             count += 1
-            B.append(i)
-        # if the number of unique entries equals X, return k as all positions have leaves
+            B.add(i)
+        # if the number of unique positions equals X, return k as all positions have leaves
         if count == X:
             return k
     # not enough unique entries were made i.e. not enough leaves in required positions
